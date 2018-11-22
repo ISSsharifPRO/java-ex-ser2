@@ -19,10 +19,14 @@ public static Integer prime(int a){
 	int kk=0, i=2;
 	for(i=2; i<=9999999; i++){
 	int k=0;
-		for(int j=2; j<=i; j++){
+
+		Double m = Math.floor(Math.sqrt(i))+1;
+		for(int j=2; j<=m; j++){
 			if (i%j == 0)
 				k++;
 		}
+
+
 	if(k==1)
 	kk++;
 	if(kk == a)
@@ -33,12 +37,13 @@ public static Integer prime(int a){
 
 // is a function to return power of a (prime) number in the (num) 
 public static Integer tavan(int num , int prime){
-	// r is the final value of power prime number
+	// r is the final value of power of prime number
 	int k = num%prime , r=0;
 	while(k == 0){
 		r++;
-		num=num/prime;
+		num/=prime;
 		k = num%prime;
+		break;
 	}
 	return r;
 }
