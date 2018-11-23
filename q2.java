@@ -15,7 +15,7 @@ public static void main(String[] args) {
 		for(int j=0; j<k; j++){
 			int o=0;
 			for(int g=0; g<n; g++){
-				o = o + (aa[i][g]&bb[g][j]);
+				o = o | (aa[i][g]&bb[g][j]);
 			}
 			cc[i][j]=o;
 		}
